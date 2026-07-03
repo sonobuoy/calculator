@@ -10,12 +10,12 @@ export type CalculatorErrorType =
   | 'NEGATIVE_SQRT';
 
 export class CalculatorError extends Error {
-  constructor(
-    public readonly type: CalculatorErrorType,
-    message: string
-  ) {
+  public readonly type: CalculatorErrorType;
+  
+  constructor(type: CalculatorErrorType, message: string) {
     super(message);
     this.name = 'CalculatorError';
+    this.type = type;
   }
 }
 

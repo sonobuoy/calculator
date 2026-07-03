@@ -15,7 +15,7 @@ export interface UseCalculatorReturn {
   appendOperator: (op: string) => void;
   clear: () => void;
   clearEntry: () => void;
-  calculate: () => void;
+  performCalculation: () => void;
   toggleSign: () => void;
   percentage: () => void;
   backspace: () => void;
@@ -37,7 +37,7 @@ export const useCalculator = (): UseCalculatorReturn => {
   const appendNumber = useCallback((num: string) => {
     setState(prev => {
       // If there's an error or we just calculated, start fresh
-      if (prev.error || prev.result !== '0' && !prev.expression) {
+      if (prev.error || (prev.result !== '0' && !prev.expression)) {
         return {
           ...prev,
           expression: num,
@@ -205,7 +205,7 @@ export const useCalculator = (): UseCalculatorReturn => {
     state,
     appendNumber,
     appendOperator,
-    performCalculation: performCalculation,
+    performCalculation,
     clear,
     clearEntry,
     toggleSign,
