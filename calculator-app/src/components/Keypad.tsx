@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, ButtonVariant } from './Button';
+import { Button } from './Button';
 
 export interface KeyConfig {
   label: string;
