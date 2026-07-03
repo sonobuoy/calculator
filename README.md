@@ -184,6 +184,3 @@ calculate("99999999999999999999 * 99999999999999999999") // returns "Overflow"
 MIT License - feel free to use this project for learning or production.
 
 ---
-
-**Dibuat dengan ❤️ oleh Senior Software Engineer**
-Mengikuti prinsip SOLID dan best practices industri.
