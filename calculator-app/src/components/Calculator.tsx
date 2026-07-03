@@ -1,7 +1,9 @@
 import React, { useEffect, useCallback } from 'react';
 import { useCalculator } from '../hooks/useCalculator';
-import { Display } from '../components/Display';
-import { Keypad, KeyConfig } from '../components/Keypad';
+import type { KeyConfig } from './Keypad';
+import { Display } from './Display';
+import { Keypad } from './Keypad';
+import { HistoryPanel } from './HistoryPanel';
 
 /**
  * Main Calculator Component
@@ -148,16 +150,18 @@ export const Calculator: React.FC = () => {
       role="application"
       aria-label="Calculator"
     >
+      <h1 className="text-xl font-bold text-white text-center mb-4">Calculator</h1>
       <Display
         expression={state.expression}
         result={state.result}
         error={state.error}
       />
       <Keypad keys={keys} onKeyPress={handleKeyPress} />
+      <HistoryPanel history={state.history} onClear={clear} />
       
       {/* Keyboard instructions for accessibility */}
       <div className="mt-4 text-xs text-gray-500 text-center">
-        <p>Keyboard supported: 0-9, +, -, *, /, Enter, Escape, Backspace</p>
+        <p>Keyboard: 0-9, +, -, *, /, Enter, Escape, Backspace</p>
       </div>
     </div>
   );

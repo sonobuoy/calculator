@@ -1,5 +1,6 @@
-import { Operation, basicOperations, unaryOperations } from './operations';
-import { CalculatorError, CalculatorErrorType, CalculationResult } from './types';
+import { basicOperations } from './operations';
+import type { CalculationResult } from './types';
+import { CalculatorError } from './types';
 
 /**
  * Token types for the expression parser

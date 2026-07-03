@@ -8,7 +8,8 @@
  * - Defensive Programming: Handles edge cases and errors gracefully
  */
 
-import { basicOperations, unaryOperations } from './operations';
+// Note: basicOperations and unaryOperations are available for future extension
+// via the OperationRegistry pattern, but not used in this implementation
 
 export class CalculatorError extends Error {
   constructor(message: string) {
